@@ -13,10 +13,10 @@ public class CamController : MonoBehaviour
     private float YSize;
     private Vector2 XYSize;
     private bool isEnabled = false;
-
-    public float camHeight;         //Height (Z value) at which Camera is present, we use -10
+    private float camHeight; //Height (Z value) at which Camera is present, we use -10
+    
     public GameObject Player;
-    public float moveConstant;      //Typical Value = 10
+    public float moveConstant;  //Typical Value = 10
     //Moveconstant is a measure of maximum offset the camera can have from the player
 
     void Start()
@@ -28,16 +28,14 @@ public class CamController : MonoBehaviour
         XYSize = new Vector2(XSize, YSize);
     }
 
-    private void Update()
+
+    void Update()
     {
+        camHeight = transform.localPosition.z;
         if(Input.GetKeyDown(KeyCode.E))
         {
             isEnabled = !isEnabled;
         }
-    }
-
-    void FixedUpdate()
-    {
         if(isEnabled)
         { 
             mousePositionX = Input.mousePosition.x;
@@ -48,6 +46,13 @@ public class CamController : MonoBehaviour
                 desiredY = (YSize * (((mousePositionY - (Screen.currentResolution.height / 2)) * moveConstant) / Screen.currentResolution.height));
             }
             transform.localPosition = new Vector3(desiredX, desiredY, camHeight);
+        }
+        else
+        {
+            if(Input.GetKeyDown(KeyCode.X))
+            {
+                transform.localPosition = new Vector3(0, 0, camHeight);
+            }
         }
     }
 }
