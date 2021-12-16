@@ -32,9 +32,7 @@ public class PlayerLook : MonoBehaviour
         desiredY = yVal - (Screen.currentResolution.height / 2);
         dispVect = new Vector3(desiredX, desiredY, 0);
         if(dispVect.magnitude > deadZone)
-        {
-            //Debug.Log(dispVect);
-            Debug.Log(new Vector2(desiredX, desiredY));
+        {           
             toRotate.transform.up = dispVect.normalized;
         }      
 

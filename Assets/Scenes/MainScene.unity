@@ -804,6 +804,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 1345854207}
+  spd: 20
+  spd2: 10
   moveConstant: 1
 --- !u!114 &1674881519
 MonoBehaviour:
