@@ -1,1 +1,1 @@
-gitignore sooth
+gitignore lomk
