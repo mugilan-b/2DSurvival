@@ -5,6 +5,14 @@ Trello link: https://trello.com/b/ThElTOmG/2dsurvival
 
 Changelog:
 
+v0.0.4:
+
+Changed CamController script:
+- Now only one Control(E)
+- Added Linear interpolated (smoothed) movement when Cam movement is enabled/disabled
+
+********
+
 v0.0.3:
 
 Main Menu.
